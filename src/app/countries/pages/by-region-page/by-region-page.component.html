@@ -1,13 +1,15 @@
 <h2>Por Region</h2>
 <hr>
 <div class="row">
-    <div class="col">
-    <app-search-box [placeholder]="'Busqueda por capital'" (onvalue)="searchByRegion($event)" ></app-search-box>
+    <div class="col text-center">
+    <!-- <app-search-box [placeholder]="'Busqueda por capital'" (onDebounce)="searchByRegion($event)" ></app-search-box> -->
+     <button *ngFor="let region of regions" class="btn  mx-2 px-3" (click)="searchByRegion(region)" [ngClass]="{'btn-primary':selectedRegion===region}">{{region}}</button>
     </div>
 </div>
 <div class="row">
     <div class="col">
        <hr>
+       <app-loading-spinner *ngIf="isLoading" ></app-loading-spinner>
    <app-country-table [countries]="countries"></app-country-table>
      
 

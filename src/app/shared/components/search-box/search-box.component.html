@@ -1,1 +1,8 @@
-<input type="text"  [placeholder]="placeholder" (keyup.enter)="emitir()" [(ngModel)]="txtSearchInput"  class="form-control">
+<!-- <input type="text"  [placeholder]="placeholder" 
+(keyup.enter)="emitir()" [(ngModel)]="txtSearchInput"
+  class="form-control"> -->
+
+
+  <input type="text"  [placeholder]="placeholder" 
+(keyup)="onKeyPress(txtInput.value)" #txtInput
+  class="form-control">

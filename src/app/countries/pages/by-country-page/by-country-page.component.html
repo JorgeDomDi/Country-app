@@ -2,12 +2,13 @@
 <hr>
 <div class="row">
     <div class="col">
-    <app-search-box [placeholder]="'Busqueda por capital'" (onvalue)="searchByCountry($event)" ></app-search-box>
+    <app-search-box [placeholder]="'Busqueda por capital'" (onDebounce)="searchByCountry($event)" ></app-search-box>
     </div>
 </div>
 <div class="row">
     <div class="col">
        <hr>
+       <app-loading-spinner *ngIf="isLoading" ></app-loading-spinner>
    <app-country-table [countries]="countries"></app-country-table>
      
 

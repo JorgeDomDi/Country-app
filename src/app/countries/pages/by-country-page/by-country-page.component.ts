@@ -9,11 +9,13 @@ import { CountriesService } from '../../services/countries.service';
 })
 export class ByCountryPageComponent {
   public countries:Country[]=[];
+  public isLoading:boolean=false;
   constructor(private countryService:CountriesService){
 
   }
 
   searchByCountry(term:string):void{
+    this.isLoading=true;
   console.log("Desde ByCapitalPage");
   console.log({term});
   this.countryService.searchCountry(term).subscribe(
@@ -21,7 +23,7 @@ export class ByCountryPageComponent {
     this.countries=countries;
     console.log(this.countries);
     
-      
+    this.isLoading=false;
     }
   )
   
