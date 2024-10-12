@@ -12,6 +12,8 @@ export class SearchBoxComponent implements OnInit,OnDestroy {
   private debouncer:Subject<string>=new Subject<string>(); //es un tipo especial de Observable 
 @Input()
 placeholder: string="";
+@Input()
+initialValue: string="";
 @Output()
 onvalue:EventEmitter<string>=new EventEmitter()
 

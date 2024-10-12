@@ -2,7 +2,7 @@
 <hr>
 <div class="row">
     <div class="col">
-    <app-search-box [placeholder]="'Busqueda por capital'" (onDebounce)="searchByCapital($event)" ></app-search-box>
+    <app-search-box [placeholder]="'Busqueda por capital'" [initialValue]="initialValue" (onDebounce)="searchByCapital($event)" ></app-search-box>
     </div>
 </div>
 <div class="row">
